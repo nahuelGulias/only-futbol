@@ -19,11 +19,9 @@ export class CarritoComponent {
 total(prenda:Prenda){
   return prenda.cantidad * prenda.precio;
 } 
-
   
 quitarDelCarrito(prendas:Prenda) : void{
-  this.carrito.quitarDelCarrito(prendas)
-  console.log("stock: " + prendas.stock);
+  this.carrito.quitarDelCarrito(prendas);
 }
  
 }

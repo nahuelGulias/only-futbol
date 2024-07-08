@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, output, Output } from '@angular/core';
-import { Prenda } from '../prendas-listado/Prenda';
-import { max } from 'rxjs';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-integer',
