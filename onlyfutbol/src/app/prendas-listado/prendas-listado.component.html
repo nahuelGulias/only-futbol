@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (prenda of prendas ; track prenda.nombre) {
+            <tr>
+                <td><img [src]= "prenda.image" [alt]="prenda.image"></td>
+                <td>{{prenda.nombre}}</td>
+                <td>{{prenda.precio}}</td>
+                <td>{{prenda.stock}}</td>
+            </tr>
+        }
+ </tbody>
+</table>
