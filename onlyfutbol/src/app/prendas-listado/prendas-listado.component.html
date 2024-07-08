@@ -1,20 +1,36 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Imagen</th>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Stock</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (prenda of prendas ; track prenda.nombre) {
-            <tr>
-                <td><img [src]= "prenda.image" [alt]="prenda.image"></td>
-                <td>{{prenda.nombre}}</td>
-                <td>{{prenda.precio}}</td>
-                <td>{{prenda.stock}}</td>
-            </tr>
+<div class="container">
+    <div class="row">
+        @for (prenda of prendas; track prenda.nombre) {
+            <div class="col-3 mb-4">
+                <div class="card text-center" >
+                    <div class="card-header">
+                        <h2 class="card-title fs-6 ">{{prenda.nombre | uppercase}}</h2>
+                    </div>
+                    <div class="card-body">
+                        <img [src]="prenda.image" [alt]="prenda.image" class="card-img-top">
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        <p class="card-text">{{prenda.precio | currency}}</p>
+                        @if (prenda.stock) { 
+                            <span class="badge text-bg-info" >STOCK: {{prenda.stock}}</span>
+                        }@else {
+                            <span class="badge text-bg-warning">SIN STOCK</span>
+                        }
+                    </div>
+                </div>
+                @if (prenda.stock) { 
+                    <div class="text-center mb-2 p-2 w-100">
+                        <app-input-integer class="d-flex flex-nowrap" [(cantidad)]="prenda.cantidad" [maxCant]="prenda.stock" (cantMaxStock) ="cantMaxStock($event)"></app-input-integer>
+                        <button class="btn btn-outline-success btn-sm" (click)="agregarCarrito(prenda)">AGREGAR AL CARRITO</button>
+                        <p>cant: {{prenda.cantidad}}</p> 
+                        <p>stock: {{prenda.stock}}</p>
+                    </div>
+                }
+            </div>
+        }@empty {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Vaya!</strong> <span> No hay productos para mostrar :( .</span>                
+              </div>
         }
- </tbody>
-</table>
+    </div>
+</div>

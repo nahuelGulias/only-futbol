@@ -3,4 +3,6 @@ export interface Prenda{
     "precio": number;
     "stock": number;
     "image": string;
+    "oferta": boolean;
+    "cantidad": number;
 }
