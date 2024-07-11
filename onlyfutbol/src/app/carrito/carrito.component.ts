@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class CarritoComponent {
   
-  listaCarrito$ :Observable <Prenda[]>;
+  listaCarrito$ : Observable <Prenda[]>;
   constructor(private carrito: PrendasCarritoService){
     this.listaCarrito$ = carrito.listaCarrito.asObservable();
   }

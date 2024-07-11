@@ -1,6 +1,7 @@
 import { Component, } from '@angular/core';
 import { Prenda } from './Prenda';
 import { PrendasCarritoService } from '../prendas-carrito.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,15 +10,17 @@ import { PrendasCarritoService } from '../prendas-carrito.service';
   styleUrl: './prendas-listado.component.scss'
 })
 export class PrendasListadoComponent {
+
+
    
 constructor( private carrito: PrendasCarritoService) {}
 
-    
+  
   prendas : Prenda [] = [
-    {
-        nombre: "Boca 1998 - Titular",
-        precio: 30000,
-        stock: 10,
+      {
+          nombre: "Boca 1998 - Titular",
+          precio: 30000,
+          stock: 10,
         image: "assets/img/boca.jpg",
         cantidad: 0,
     },
@@ -84,5 +87,4 @@ agregarCarrito(prendas:Prenda) : void{
 cantMaxStock(m:string){
     return alert(m);
 }
-
 }
