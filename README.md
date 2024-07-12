@@ -6,3 +6,5 @@ Nombre y Apellido: Nahuel ALberto Gulias
 DNI: 43.798.859
 Email: guliasnahuel07@gmail.com
 Sede Tandil
+
+NOTA: Al momento de ingresar al stackblitz escribir en el terminal "cd onlyfutbol" ya que esta dentro de una carpeta.
