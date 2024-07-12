@@ -1,7 +1,7 @@
 import { Component, } from '@angular/core';
 import { Prenda } from './Prenda';
 import { PrendasCarritoService } from '../prendas-carrito.service';
-import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -11,10 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class PrendasListadoComponent {
 
-
-   
 constructor( private carrito: PrendasCarritoService) {}
-
   
   prendas : Prenda [] = [
       {
@@ -79,7 +76,6 @@ constructor( private carrito: PrendasCarritoService) {}
 agregarCarrito(prendas:Prenda) : void{
     if(prendas.cantidad > 0)
         this.carrito.agregarCarrito(prendas);
-    
     prendas.stock -= prendas.cantidad;
     prendas.cantidad = 0;
 }

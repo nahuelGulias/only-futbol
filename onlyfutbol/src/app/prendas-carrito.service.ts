@@ -23,12 +23,14 @@ export class PrendasCarritoService {
     this.listaCarrito.next(this._listaCarrito);
   }
 
-
-
   quitarDelCarrito(prenda: Prenda) {
     this._listaCarrito = this._listaCarrito.filter(item => item.nombre !== prenda.nombre);
     this.listaCarrito.next(this._listaCarrito);
   }
+
+  total(prenda:Prenda){
+    return prenda.cantidad * prenda.precio;
+  } 
 
 
 }

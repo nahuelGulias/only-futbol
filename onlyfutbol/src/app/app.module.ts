@@ -9,6 +9,7 @@ import { OnlyfutbolPrendasComponent } from './onlyfutbol-prendas/onlyfutbol-pren
 import { OnlyfutbolAboutComponent } from './onlyfutbol-about/onlyfutbol-about.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { OnlyfutbolCompraComponent } from './onlyfutbol-compra/onlyfutbol-compra.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     OnlyfutbolPrendasComponent,
     OnlyfutbolAboutComponent,
     CarritoComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    OnlyfutbolCompraComponent
   ],
   imports: [
     BrowserModule,

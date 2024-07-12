@@ -11,7 +11,7 @@
 <div class="container">
    @for (prenda of (listaCarrito$ | async); track prenda.nombre) {
         <div class="list-group column m-2  row w-100">
-            <div class="list-group-item d-flex flex-nowrap row w-100" >
+            <div class="list-group-item d-flex flex-nowrap row w-100 mb-1 mt-1" >
                 <div class="w-50">
                     <img width="100" [src]="prenda.image" [alt]="" class="rounded">
                 </div>
@@ -19,14 +19,20 @@
                     <div class="column">
                         <h2 class="mb-1 fs-6">{{prenda.nombre}}</h2>
                         <p>Cantidad: {{prenda.cantidad}}</p>
-                        <p class=""> Total: {{total(prenda)  | currency}}</p>
-                        <div class="text-end column d-flex flex-nowrap w-75">
-                            <button class="btn btn-outline-success btn-sm">Comprar</button>
+                        <p> Total: {{total(prenda)  | currency}}</p>
+                        <div class="text-end ">
                             <button class="btn btn-outline-danger btn-sm ms-1" (click)="quitarDelCarrito(prenda)">Eliminar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    }  @if ((listaCarrito$ | async)!.length > 0){
+        <div>
+            <a [routerLink]="['/comprar']"class="btn btn-outline-success btn-sm w-100">Comprar</a>  
+        </div>
     }
+
+       
+
 </div>

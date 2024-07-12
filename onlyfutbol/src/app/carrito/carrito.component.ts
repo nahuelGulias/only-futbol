@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, } from '@angular/core';
 import { PrendasCarritoService } from '../prendas-carrito.service';
 import { Prenda } from '../prendas-listado/Prenda';
 import { Observable } from 'rxjs';
@@ -15,13 +15,11 @@ export class CarritoComponent {
     this.listaCarrito$ = carrito.listaCarrito.asObservable();
   }
   
-
-total(prenda:Prenda){
-  return prenda.cantidad * prenda.precio;
-} 
-  
-quitarDelCarrito(prendas:Prenda) : void{
-  this.carrito.quitarDelCarrito(prendas);
-}
+  total(prenda:Prenda){
+    return this.carrito.total(prenda);
+  } 
+  quitarDelCarrito(prendas:Prenda) : void{
+   this.carrito.quitarDelCarrito(prendas);
+  }
  
 }
